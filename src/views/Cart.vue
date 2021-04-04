@@ -1,13 +1,13 @@
 <template>
   <div>
-    首页
+    购物车
   </div>
 </template>
 
 <script>
 
 export default {
-  name: "Home",
+  name: "Cart",
   data () {
     return {
 

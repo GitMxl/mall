@@ -1,13 +1,13 @@
 <template>
   <div>
-    首页
+    分类
   </div>
 </template>
 
 <script>
 
 export default {
-  name: "Home",
+  name: "Category",
   data () {
     return {
 
