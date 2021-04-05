@@ -5,7 +5,7 @@
   </div>
 </template>
 <script>
-import MainTabBar from 'components/content/MainTabBar'
+import MainTabBar from 'components/content/tabbar/MainTabBar'
 export default {  
   name:'app',
   components:{
@@ -14,7 +14,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus" scope="this api replaced by slot-scope in 2.5.0+">
+<style lang="stylus" rel="stylesheet/stylus" scope>
   @import './assets/css/common.styl'  
 
 </style>
