@@ -15,6 +15,6 @@ export default {
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scope>
-  @import './assets/css/common.styl'  
+  @import 'assets/css/common.styl'  
 
 </style>

@@ -1,16 +1,16 @@
 <template>
-  <div>
+  <div id="home-page">
     <nav-bar class="home-bar">
       <div slot="center">购物圈</div>
     </nav-bar>
-    <main-swiper></main-swiper>
+    <main-swiper :banners=banners></main-swiper>
   </div>
 </template>
 
 <script>
-import {getHomeData} from 'network/home'
 import NavBar from 'components/common/navbar/NavBar'
 import MainSwiper from 'components/common/swiper/MainSwiper'
+import {getHomeData} from 'network/home'
 export default {
   name: "Home",
   components:{
@@ -40,4 +40,6 @@ export default {
     background : #f6f
     color : #fff
     text-align : center
+  .swiper-slide-img
+    width:100%
 </style>

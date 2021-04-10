@@ -5,16 +5,9 @@
 </template>
 
 <script>
-
-export default {
-  name: "Profile",
-  data () {
-    return {
-
-    };
-  }
-}
-
+  export default {
+    name:'Profile',
+  };
 </script>
 
 <style lang="stylus" ref="stylesheet/stylus" scoped>

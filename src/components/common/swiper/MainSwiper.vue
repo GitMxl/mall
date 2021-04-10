@@ -1,35 +1,50 @@
 <template>
-  <swiper
-    :slides-per-view="3"
-    :space-between="50"
-    @swiper="onSwiper"
-    @slideChange="onSlideChange"
-  >
-    <swiper-slide>Slide 1</swiper-slide>
-    <swiper-slide>Slide 2</swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
-    ...
-  </swiper>
+    <swiper ref="mySwiper" :options="swiperOptions">
+      <swiper-slide v-for="(item,i) in banners" :key="i">
+        <img :src="item.image" class="swiper-slide-img" alt="" srcset="">
+      </swiper-slide>
+      <div class="swiper-pagination" slot="pagination"></div>
+    </swiper>
 </template>
 <script>
-  // Import Swiper Vue.js components
-  import { Swiper, SwiperSlide } from 'swiper/vue';
-
-  // Import Swiper styles
-  import 'swiper/swiper-bundle.min.css';
+import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
+import 'swiper/swiper-bundle.css'
   export default {
-    name:'SwiperMain',
+    name:'MainSwiper',
+    props:{
+      banners:null
+    },
     components: {
       Swiper,
-      SwiperSlide,
+      SwiperSlide
     },
-    methods: {
-      onSwiper(swiper) {
-        console.log(swiper);
-      },
-      onSlideChange() {
-        console.log('slide change');
-      },
+    data(){
+      return {
+        swiperOptions: {
+          loop:true,
+          pagination: {
+            el: '.swiper-pagination'
+          },
+          // Some Swiper option/callback...
+        }
+      }
     },
+    directives: {
+      swiper: directive
+    },
+    computed: {
+      swiper() {
+        return this.$refs.mySwiper.$swiper
+      }
+    },
+    mounted() {
+      console.log('Current Swiper instance object', this.swiper)
+      this.swiper.slideTo(3, 1000, false)
+    }
   };
 </script>
+
+<style lang="stylus" ref="stylesheet/stylus" scoped>
+  .swiper-slide-img
+    width:100%
+</style>
